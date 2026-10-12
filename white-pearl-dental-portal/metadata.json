@@ -1,0 +1,6 @@
+{
+  "name": "White Pearl Dental Clinic",
+  "description": "Luminous, modern dental practice in Raysan, Gandhinagar offering cosmetic dentistry, teeth whitening, check-ups, and dental implant consultations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

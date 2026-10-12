@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --pearl-white: #F7F7FC;
+    --midnight-blue: #171A36;
+    --iridescent-violet: #A99BFF;
+    --ice-blue: #BCEBFF;
+    --silver-grey: #D9DCE8;
+    --deep-graphite: #292C3A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--pearl-white);
+    color: #1a1c1f;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--pearl-white);
+    color: #1a1c1f;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom focus outline for accessibility */
+  :focus-visible {
+    outline: 2px solid #A99BFF;
+    outline-offset: 3px;
+  }
+}
+
+/* Typography Utility Classes matching Stitch Design */
+.font-display-hero {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.font-michroma {
+  font-family: 'Michroma', sans-serif;
+}
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-space-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Custom Prismatic Sheen & Glow Utilities */
+.pearl-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(217, 220, 232, 0.65);
+  box-shadow: 0 20px 40px -15px rgba(169, 155, 255, 0.16), 0 0 15px 0 rgba(188, 235, 255, 0.2);
+}
+
+.pearl-glass-dark {
+  background: rgba(23, 26, 54, 0.88);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(169, 155, 255, 0.22);
+  box-shadow: 0 25px 50px -12px rgba(10, 12, 26, 0.5), 0 0 20px 0 rgba(169, 155, 255, 0.15);
+}
+
+.pearl-glow-sm {
+  box-shadow: 0 0 20px rgba(169, 155, 255, 0.35);
+}
+
+.pearl-glow-cyan {
+  box-shadow: 0 0 24px rgba(188, 235, 255, 0.4);
+}
+
+/* Subtle holographic iridescence */
+.iridescent-border {
+  position: relative;
+}
+.iridescent-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(169, 155, 255, 0.6), rgba(188, 235, 255, 0.4), rgba(217, 220, 232, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Clean Custom Scrollbar (subtle) */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F7FC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9DCE8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A99BFF;
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
